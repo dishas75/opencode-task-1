@@ -1,0 +1,51 @@
+Title: Distance based classification using K-Nearest Neighbours.
+
+Objective:
+The goal of this task is to implement a distance-based classification algorithm from scratch to understand how similarity between data points is used for prediction.
+KNN is implemented without using and machine learning libraries.
+
+Dataset:
+The Fashion-MNIST dataset is used,which contains greyscale images of clothing items belonging to 10 different classes.Each image is of size 28×28 pixels.
+For simplicity and faster execution,a subset of the dataset is used:
+-2000 training samples
+-200 test samples
+
+Data Representation:
+
+Each image is flattened from 28×28 matrix into a 784-dimensional vector.
+Pixel values are normalised to the range [0,1] to ensure fair distance calculation.
+
+Methodology:
+A custom K-Nearest Neighbours classifier is implemented using Python and NumPy,
+The algorithm works as follows:
+1.Store the training data.
+2.For each of the test sample,compute the distance from all the training samples.
+3.Select the K closest neighbours.
+4.Predict the label using majority voting.
+
+Three distance metrics are implemented from scratch:
+-Euclidean Distance
+-Manhattan Distance
+-Cosine distance
+
+Experiments:
+1.Effect of K:
+The value of K is varied (1,3,5,7) using Euclidean distance to observe its effect on classification accuracy.
+
+2.Distance metric comparison:
+Using K=3,the working of Euclidean,Manhattan and Cosine diances is compared.
+
+Evaluation:
+Accuaracy is calculated for evaluation purpose. Misclassified samples are also recorded for analysis.
+
+Observations:
+-Very small values of K are sensitive to noise.
+-Moderate values of K give better and more stable performance.
+-Manhattan distance performed slightly better than Euclidean in this setup.
+-Cosine distance performed comparably but slightly lower.
+-Some misclassifications occur due to visual similarity between classes such as shirts,pullovers and clothes.
+
+Conclusion:
+This implementation helped in understanding how distance metrics and the choice of K affect KNN performance. 
+Implementing the algorithm from scratch provided insight into the internal working of KNN .
+Its limitations include slow prediction time and high memory usage.
